@@ -1,28 +1,23 @@
 "use strict"
 
-let a = null;
-let b = null;
+let a = 8;
+let b = 2;
 
-function sum (a, b){
-  return (a+b)
+function sum(a, b) {
+  return (a + b)
 }
 
-console.log(sum(2,4))
 
-function multi (a, b){
-  return (a*b)
+function multi(a, b) {
+  return (a * b)
 }
 
-console.log(multi(2,4))
 
-function div (a, b){
-  return (a/b)
+function div(a, b) {
+  return (a / b)
 }
 
-console.log(div(2,4))
 
-function diff (a, b){
-  return (a-b)
+function diff(a, b) {
+  return (a - b)
 }
-
-console.log(diff(2,4))
