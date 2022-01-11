@@ -1,4 +1,4 @@
-"use strict"
+'use strict'
 
 let a = 8;
 let b = 2;
@@ -47,4 +47,4 @@ function mathOperation(arg1, arg2, operation) {
 }
 
 
-console.log(mathOperation(5, 10, '/'));
+console.log(mathOperation(15, 5, '-'));
