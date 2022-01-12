@@ -8,8 +8,8 @@ function displayMessage(num) {
   if (rest100 <= 19) {
     switch (rest100) {
       case 1:
-        console.log("Ваша сумма в " + num + " рубль успешно зачислена");
-        break;
+        return "Ваша сумма в " + num + " рубль успешно зачислена";
+      case 5:
       case 6:
       case 7:
       case 8:
@@ -24,40 +24,36 @@ function displayMessage(num) {
       case 17:
       case 18:
       case 19:
-        console.log("Ваша сумма в " + num + " рублей успешно зачислена");
-        break;
+        return "Ваша сумма в " + num + " рублей успешно зачислена";
       case 2:
       case 3:
       case 4:
-      case 5:
-        console.log("Ваша сумма в " + num + " рубля успешно зачислена");
-        break;
+        return "Ваша сумма в " + num + " рубля успешно зачислена";
       default:
-        console.log("Неверное значение");
+        return "Неверное значение";
     }
   }
   if (rest100 > 19) {
     switch (rest10) {
       case 1:
-        console.log("Ваша сумма в " + num + " рубль успешно зачислена");
-        break;
-      case 6:
+        return "Ваша сумма в " + num + " рубль успешно зачислена";
+      case 5:
+        case 6:
       case 7:
       case 8:
       case 9:
       case 0:
-        console.log("Ваша сумма в " + num + " рублей успешно зачислена");
-        break;
+        return "Ваша сумма в " + num + " рублей успешно зачислена";
       case 2:
       case 3:
       case 4:
-      case 5:
-        console.log("Ваша сумма в " + num + " рубля успешно зачислена");
-        break;
+        return "Ваша сумма в " + num + " рубля успешно зачислена";
       default:
-        console.log("Неверное значение");
+        return "Неверное значение";
     }
   }
 }
 
-displayMessage(number)
+let answer = displayMessage(number)
+
+alert(answer)
