@@ -1,19 +1,16 @@
 "use strict"
 
-let userInput = prompt('напишите короткое предложение');
-
-
 function giveAway(str) {
   return str.charAt(0).toUpperCase() + str.substring(1).toLowerCase();
 }
 
-alert (giveAway(userInput))
+let input = "да"
 
-const result  = confirm("Хотите повторить?");{
-  if (result) {
-    let userInput = prompt('напишите короткое предложение');
-    alert (giveAway(userInput));
-     } else {
-    alert ("Прощайте =)");
-  }
+while (input.toLowerCase() === "да") {
+  const userInput = prompt('напишите короткое предложение');
+  const text = giveAway(userInput);
+  alert(text);
+  input = prompt("Хотите повторить?");
 }
+
+alert("конец")
