@@ -16,11 +16,13 @@ for (let i = 1; i <= 100; i++) {
   }
   if (num15 === 0) {
     console.log("FizzBuzz");
+  } else {
+    if (num5 === 0) {
+      console.log("Buzz");
+    }
+    if (num3 === 0) {
+      console.log("Fizz");
+    }
   }
-  if (num5 === 0 && num15 !== 0) {
-    console.log("Buzz");
-  }
-  if (num3 === 0 && num15 !== 0) {
-    console.log("Fizz");
-  }
+
 }

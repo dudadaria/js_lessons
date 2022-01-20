@@ -7,21 +7,17 @@ function sum(a, b) {
   return (a + b)
 }
 
-
 function multi(a, b) {
   return (a * b)
 }
-
 
 function div(a, b) {
   return (a / b)
 }
 
-
 function diff(a, b) {
   return (a - b)
 }
-
 
 let arg1 = 2;
 let arg2 = 3;
