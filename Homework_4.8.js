@@ -25,7 +25,7 @@ class Product1 extends Product {
   }
 }
 
-const obk = new Product1('яблоко', 100)
-obk.make25PercentDiscount()
-obk.make50PercentDiscount()
-console.log(obk)
+const obj = new Product1('яблоко', 100)
+obj.make25PercentDiscount()
+obj.make50PercentDiscount()
+console.log(obj)
