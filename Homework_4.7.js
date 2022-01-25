@@ -16,7 +16,6 @@
   необходимо выдать соответствующее сообщение с помощью console.log и вернуть пустой объект.
 */
 
-
 function showBitdepth() {
   let num = +prompt('Введите число от 0 до 999');
   let numStr = String(num);
