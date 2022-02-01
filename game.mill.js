@@ -4,9 +4,11 @@ class Game {
   constructor(answers) {
     this.answers = answers;
     this.step = 0;
+    this.points = 0
+    this.gameIsOver = false;
   }
 
-  greating() {
+  greetings() {
     alert("Добро пожаловать на игру \'Кто хочет стать миллионером\'")
   };
 
@@ -20,24 +22,46 @@ class Game {
     }
   }
 
-  start() {
-    this.answers.forEach(answer => {
-      const text = this.createText()
-      {
-        const result = prompt(text)
-        if (result === this.answers[this.step].answer.toLowerCase()) {
-          alert('Это правильный ответ')
-        } else {
-          alert('Это не правильный ответ');
-        }
-      }
-      this.nextStep()
-    })
+  resetGame() {
+    this.gameIsOver = false;
+    this.step = 0;
   }
 
-  /**scoring() {
-    alert('Вы набрали' + game.start.points + 'очков')
-  }**/
+  start() {
+    this.greetings();
+    this.answers.forEach(() => {
+      if (this.gameIsOver) {
+        return;
+      }
+
+      const text = this.createText()
+      const result = prompt(text)
+      if (!result) {
+        this.gameIsOver = true;
+        alert("Вы вышли из игры");
+      } else if (result.toLowerCase() === this.answers[this.step].answer.toLowerCase()) {
+        alert('Это правильный ответ');
+        this.points++
+      } else {
+        alert('Это не правильный ответ');
+      }
+      this.nextStep()
+    });
+    this.resetGame()
+    {
+      if (this.points === 0 || this.points === 5) {
+        alert('Вы набрали ' + this.points + ' баллов')
+      }
+
+      if (this.points === 1) {
+        alert('Вы набрали ' + this.points + ' балл')
+      }
+      if (this.points === 2 || this.points === 3 || this.points === 4) {
+        alert('Вы набрали ' + this.points + ' балла')
+      }
+    }
+
+  }
 }
 
 
@@ -53,8 +77,8 @@ const answers = [
     answer: 'B',
   },
   {
-    question: "Месяц рождения любимой жены?  ",
-    option: 'A. август, B. сентябрь, C. октябрь, D. ноябрь',
+    question: "За чем послала жена мужа в мультфильме 'Падал прошлогодний снег'?",
+    option: 'A. За подснежниками, B. За спичками, C. За елкой, D. За дровами',
     answer: 'C',
   },
   {
@@ -70,9 +94,5 @@ const answers = [
 ]
 
 
-const game = new Game(answers);
-game.greating()
-game.start()
-game.nextStep()
-game.createText()
-//game.scoring()
+const
+  game = new Game(answers);
