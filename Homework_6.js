@@ -37,7 +37,6 @@ function changeProgress() {
   currentTimeEl.innerText = video.currentTime;
 
 }
-
 video.addEventListener("ended", function () {
   clearInterval(progressIdentifier);
 })
