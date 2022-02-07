@@ -8,7 +8,7 @@ const timing = document.querySelector('.timing');
 const currentTimeEl = document.querySelector('.currentTime');
 
 
-
+let wasVideoPlaying = false;
 let progressIdentifier = null;
 
 window.addEventListener('load', function () {
@@ -25,18 +25,39 @@ pauseBtn.addEventListener('click', function () {
 });
 
 playBtn.addEventListener('click', function () {
-    if (video.paused) {
-      video.play();
-      progressIdentifier = setInterval(changeProgress, 100);
-    }
+  if (video.paused) {
+    video.play();
+    progressIdentifier = setInterval(changeProgress, 100);
   }
-)
-;
+});
+
+timing.addEventListener('change', function () {
+  video.currentTime = timing.value;
+  if (wasVideoPlaying) {
+    video.play();
+    progressIdentifier = setInterval(changeProgress, 100);
+  } else {
+    changeProgress()
+  }
+})
+
+timing.addEventListener('mousedown', function () {
+  wasVideoPlaying = !video.paused;
+  if (wasVideoPlaying) {
+    video.pause();
+    clearInterval(progressIdentifier)
+  }
+})
+
 function changeProgress() {
   timing.value = video.currentTime;
   currentTimeEl.innerText = video.currentTime;
-
 }
+
 video.addEventListener("ended", function () {
   clearInterval(progressIdentifier);
+})
+
+volume.addEventListener('change', function () {
+  video.volume = volume.value;
 })
