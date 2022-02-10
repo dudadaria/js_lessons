@@ -1,34 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
-	<link rel="stylesheet" href="./Homework_6.3.1.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 </head>
+
 <body>
-<button>Показать блок</button>
-<div class="message">
-	Lorem ipsum dolor sit.
+<div class="container">
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">
+		<strong>Holy guacamole!</strong> You should check in on some of those fields below.
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<div class="alert alert-info alert-dismissible fade show" role="alert">
+		<strong>Holy guacamole!</strong> You should check in on some of those fields below.
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<div class="alert alert-success alert-dismissible fade show" role="alert">
+		<strong>Holy guacamole!</strong> You should check in on some of those fields below.
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
 </div>
 
-<!-- Задание.
-1. Сохраните в переменную btn ссылку на кнопку.
-2. Сохраните в переменную msg ссылку на .message.
-3. На btn назначьте обработку клика.
-		3.1 Внутри функции-обработчика сделайте чтобы у msg display становился block.
-		3.2 Для msg с помощью classList.add() добавьте классы animate__animated и
-		animate__fadeInLeftBig
+<!-- Задание. Надо сделать, чтобы по клику на крестик исчезало тот блок
+с сообщением, в котором этот крестик находится. Для этого:
+1. Получите все кнопки, например с помощью querySelectorAll
+2. Переберите полученную коллекцию, например с помощью forEach
+2.1 Методу forEach передавайте callback-функцию с параметром button
+3. Каждому button назначьте обработчик клика, с помощью addEventListener,
+а самим обработчиком клика будет функция closeClickHandler (в коде ниже)
+4. В функции closeClickHandler из объекта события event обратитесь
+к currentTarget, затем обратитесь к родительскому узлу, затем к свойству
+style, наконец сделайте display: none
 -->
 
 <script>
-let btn = document.querySelector("button");
-let msg = document.querySelector('.message');
-btn.addEventListener('click', function (event){
-	msg.style.display ='block';
-	msg.classList.add('animate__animated', 'animate__fadeInLeftBig')
-})
+	let buttons = document.querySelectorAll('button')
+	buttons.forEach(function (button){
+		button.addEventListener('click', closeClickHandler)
+	})
+	function closeClickHandler(event) {
+		
+		event.currentTarget.parentNode.style.display = 'none'
+	}
 </script>
 </body>
+
 </html>
