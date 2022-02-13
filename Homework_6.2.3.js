@@ -1,3 +1,4 @@
+
 const goldenClass = 'golden';
 const stars = document.querySelectorAll('i');
 stars.forEach(function (star, index, arr) {
