@@ -3,7 +3,6 @@ class Food {
     this.x = null;
     this.y = null;
   }
-
   /**
    * Метод получает другие игровые объектыю которые нужны ему для работы
    * @param {Settings} settings объект настроек

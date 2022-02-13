@@ -3,7 +3,6 @@ class Game {
     this.tickIdentifier = null;
     this.massegeEl = document.getElementById('message')
   }
-
   /**
    * Метод получает другие игровые объекты, которые нужны ему для работы
    * @param {Settings} settings

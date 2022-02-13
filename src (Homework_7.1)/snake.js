@@ -1,5 +1,6 @@
 'use strict'
 
+
 class Snake {
   constructor() {
     this.possibleDirections = ['down', 'up', 'left', 'right'];

@@ -1,5 +1,6 @@
 'use strict'
 
+
 class Board {
   constructor() {
     this.boardEl = document.getElementById('game')

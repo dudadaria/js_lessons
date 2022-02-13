@@ -1,6 +1,5 @@
 'use strict'
 
-
 class Settings {
   /**
    * @param {Object} params -Параметры игры.
