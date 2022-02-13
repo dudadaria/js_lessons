@@ -4,7 +4,6 @@ class Board {
   constructor() {
     this.boardEl = document.getElementById('game')
   }
-
   /**
    * Метод получает другие игровые объекты, которые нужны ему для работы.
    * @param {Object} settings объект настроек

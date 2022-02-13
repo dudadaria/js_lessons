@@ -3,7 +3,6 @@ class Menu{
     this.startBtnEl = document.getElementById('startBtn');
     this.pauseBtnEl = document.getElementById('pauseBtn');
   }
-
   /**
    * Метод назначает переданные функции в качестве обработчика событий клика на кнопки "Старт" и "Пауза"
    * @param {Function} startBtnClickHandler

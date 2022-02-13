@@ -1,5 +1,4 @@
 'use strict'
-
 window.addEventListener('load', () => {
   const settings = new Settings();
   const status = new Status();

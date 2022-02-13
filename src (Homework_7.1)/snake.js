@@ -3,7 +3,6 @@
 class Snake {
   constructor() {
     this.possibleDirections = ['down', 'up', 'left', 'right'];
-
     this.body = [
       {
         x: 1,

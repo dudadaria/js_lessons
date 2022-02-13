@@ -5,7 +5,6 @@ class Status {
   constructor() {
     this.setPaused();
   }
-
   /**это значит что мы играем*/
   setPlaying() {
     this.condition = 'playing';
