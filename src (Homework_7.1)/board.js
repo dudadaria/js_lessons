@@ -4,6 +4,7 @@ class Board {
   constructor() {
     this.boardEl = document.getElementById('game')
   }
+
   /**
    * Метод получает другие игровые объекты, которые нужны ему для работы.
    * @param {Object} settings объект настроек
@@ -40,6 +41,16 @@ class Board {
         tdEl.classList.add(`snakeBody`);
       })
     }
+  }
+
+  /**
+   * Метод очищает игровое поле
+   */
+  clearBoard() {
+    const tdElem = document.querySelectorAll('td');
+    tdElem.forEach(function (td) {
+      td.className = '';
+    })
   }
 
   /**
